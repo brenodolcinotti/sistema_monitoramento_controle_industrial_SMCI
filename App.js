@@ -1,11 +1,25 @@
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
+import machineCard from './components/machineCard';
+import alertModal from './components/alertModal';
+import styles from './styles/styles';
 
 export default function App() {
+
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.header}>SMCI - Monitoramento Industrial</Text>
+      <View style={styles.supervisorBox}>
+        <Text style={styles.label}>Supervisor Ativo:</Text>
+        <Text style={styles.supervisor}>Anna Karolina Dantas</Text>
+      </View>
+      
+      <ScrollView>
+        <Text style={styles.setor}></Text>
+      </ScrollView>
     </View>
   );
 }
